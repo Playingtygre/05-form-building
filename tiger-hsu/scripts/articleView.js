@@ -75,13 +75,13 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+//  InitNewArticlePage is being called near the bottom of the ArticleView.js file, the reason this file is being called near the bottom is beause the article-form needs to be first setup before any the tab-context show up.
 articleView.initNewArticlePage = () => {
   // TODONE: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
   $('.tab-content').show();
 
 
-  // TODO: The new articles we create will be copy/pasted into our source data file.
+  // TODONE: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
 
   $('#article-json').on('focus', function(){
@@ -113,7 +113,7 @@ articleView.create = () => {
   // TODONE: Use our interface to the Handblebars template to put this new article into the DOM:
   $('#articles').append(newArticle.toHtml());
 
-  // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
+  // TODONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each(function(i, block){
     hljs.highlightBlock(block);
   });
@@ -130,7 +130,7 @@ articleView.create = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// This articleview.initIndex page is called on the new.html file twoard the bottom of the page.
 articleView.initIndexPage = () => {
   articles.forEach(article => $('#articles').append(article.toHtml()));
   articleView.populateFilters();
